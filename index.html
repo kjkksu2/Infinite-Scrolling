@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <title>Load More</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="image">
+          <img src="1.jpg" alt="" />
+        </div>
+        <div class="text">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="1.jpg" alt="" />
+        </div>
+        <div class="text">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="1.jpg" alt="" />
+        </div>
+        <div class="text">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="1.jpg" alt="" />
+        </div>
+        <div class="text">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="1.jpg" alt="" />
+        </div>
+        <div class="text">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="loading">
+      <i class="fas fa-sync-alt"></i>
+    </div>
+  </body>
+  <script>
+    const container = document.querySelector(".container");
+    const card = document.querySelector(".card");
+    const loading = document.querySelector(".loading");
+
+    window.addEventListener("scroll", () => {
+      if (container.getBoundingClientRect().bottom <= 724) {
+        loading.style.display = "block";
+
+        setTimeout(() => {
+          const cloneCard = card.cloneNode("deep");
+          container.appendChild(cloneCard);
+        }, 500);
+      } else {
+        loading.style.display = "none";
+      }
+    });
+  </script>
+</html>
